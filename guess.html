@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUESS THE NUMBER</title>
+</head>
+<body>
+    
+    <style>
+        *{
+            background-color: black;
+        }
+    </style>
+    
+<script>
+
+    let randomNumber = Math.floor(Math.random() * 20) + 1; // Generate random number between 1 and 100
+    let attempts = 0;
+    
+    while (true) {
+        let guess = parseInt(prompt("Guess a number between 1 and 20:"));
+    
+        if (isNaN(guess)) {
+            alert("Please enter a valid number.");
+            continue;
+        }
+        attempts++;
+        if (guess === randomNumber) {
+            alert("Congratulations! You guessed the number " + randomNumber + " in " + attempts + " attempts.");
+            break;
+        } else if (guess < randomNumber) {
+            alert("Too low. Try again.");
+        } else {
+            alert("Too high. Try again.");
+        }
+    }
+    </script>
+</body>
+</html>
